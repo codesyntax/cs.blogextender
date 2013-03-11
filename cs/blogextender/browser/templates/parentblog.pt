@@ -1,0 +1,15 @@
+<div class="blog" tal:define="blog view/returnblog" tal:condition="blog">
+    <a class="blogname"
+        tal:attributes="href blog/absolute_url"
+        tal:content="blog/Title">
+        Blog title
+    </a>
+    <a
+        tal:attributes="href blog/absolute_url"
+        >
+        <img src=""
+            tal:condition="blog/image"
+            tal:replace="structure blog/image" />
+    </a>
+
+</div>

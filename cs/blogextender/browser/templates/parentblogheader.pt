@@ -1,0 +1,23 @@
+<div class="blogheader" tal:define="blog view/returnblog"
+     tal:condition="blog">
+    <a href=""
+           tal:attributes="href blog/absolute_url;">
+      <img src=""
+                tal:condition="blog/image|nothing"
+                tal:replace="structure blog/image" />
+    </a>
+    <h1 class="documentFirstHeading" tal:condition="context/@@blog_checker/isBlog">
+        <a href=""
+           tal:attributes="href blog/absolute_url;
+                           title blog/Title">
+            <span tal:replace="blog/Title" />
+        </a>
+    </h1>
+    <h2 class="blogTitle" tal:condition="not:context/@@blog_checker/isBlog">
+        <a href=""
+           tal:attributes="href blog/absolute_url;
+                           title blog/Title">
+            <span tal:replace="blog/Title" />
+        </a>
+    </h2>
+</div>
