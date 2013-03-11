@@ -1,15 +1,26 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="cs.blogextender">
 
   <i18n:registerTranslations directory="locales" />
+  <grok:grok package="." />
+  <include package=".browser" />
 
   <adapter factory=".extender.BlogExtender" />
   <adapter factory=".mailer.BlogCommentMailer" />
   <adapter factory=".feed.CommentFeedEntry" />
+
+  <plone:portlet
+      name="cs.blogextender.blogimageportlet.BlogImagePortlet"
+      interface=".blogimageportlet.IBlogImagePortlet"
+      assignment=".blogimageportlet.Assignment"
+      renderer=".blogimageportlet.Renderer"
+      addview=".blogimageportlet.AddForm"
+      />
 
   <genericsetup:registerProfile
       name="default"

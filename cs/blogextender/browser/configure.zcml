@@ -4,6 +4,12 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="cs.blogextender">
 
+
+  <plone:portletTemplates
+    interface="collective.portlet.ngcollection.ngcollection.INGCollection"
+    directory="portlet-templates"
+    />
+
   <browser:page
       name="blogs_summary_view"
       permission="zope2.View"
@@ -64,7 +70,7 @@
       />
 
   <browser:menuItem
-      menu="object_buttons"
+      menu="plone_contentmenu_actions"
       for="Products.Archetypes.interfaces.IBaseFolder"
       title="Activate blog"
       action="${object_url}/@@activate_blog"
@@ -73,8 +79,8 @@
       />
 
   <browser:menuItem
-      menu="object_buttons"
-      for=".interfaces.IBlog"
+      menu="plone_contentmenu_actions"
+      for="..interfaces.IBlog"
       title="Deactivate blog"
       action="${object_url}/@@activate_blog?deact=1"
       filter="object/@@blog_checker/isBlog"
