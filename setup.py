@@ -14,10 +14,10 @@ setup(name='cs.blogextender',
         "Framework :: Plone",
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='blog plone',
+      author='Mikel Larreategi',
+      author_email='mlarreategi@codesyntax.com',
+      url='http://github.com/codesyntax/cs.blogextender/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['cs'],
@@ -26,6 +26,9 @@ setup(name='cs.blogextender',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'five.grok',
+          'collective.blog.star',
+          'collective.contentrules.mailadapter,'
       ],
       entry_points="""
       # -*- Entry points: -*-
