@@ -28,7 +28,7 @@ setup(name='cs.blogextender',
           # -*- Extra requirements: -*-
           'five.grok',
           'collective.blog.star',
-          'collective.contentrules.mailadapter,'
+          'collective.contentrules.mailadapter',
       ],
       entry_points="""
       # -*- Entry points: -*-
