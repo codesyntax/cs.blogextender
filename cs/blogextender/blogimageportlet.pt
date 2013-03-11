@@ -1,0 +1,51 @@
+<dl class="portlet portletBlogImagePortlet"
+    i18n:domain="eibarorg.theme"
+    tal:condition="view/available"
+    tal:define="blog view/parentblog">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a href="" tal:attributes="href blog/absolute_url"
+                tal:content="blog/Title">
+           Header
+        </a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem odd">
+        <a href="" tal:attributes="href blog/absolute_url;
+                                    title blog/Title"
+        tal:content="structure blog/image">
+        Body text
+        </a>
+    </dd>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <ul>
+            <li class="rss">
+                <a tal:condition="not:blog/feedburner_posts"
+                    href="" tal:attributes="href string:${blog/absolute_url}/atom.xml">
+                    Blogaren RSS jarioa
+                </a>
+                <a tal:condition="blog/feedburner_posts"
+                    href="" tal:attributes="href blog/feedburner_posts">
+                    Blogaren RSS jarioa
+                </a>
+            </li>
+            <li class="rss">
+                <a tal:condition="not:blog/feedburner_comments"
+                    href="" tal:attributes="href string:${blog/absolute_url}/erantzunak/atom.xml">
+                    Erantzunen RSS jarioa
+                </a>
+                <a tal:condition="blog/feedburner_comments"
+                    href="" tal:attributes="href blog/feedburner_comments">
+                    Erantzunen RSS jarioa
+                </a>
+
+            </li>
+        </ul>
+        <span class="portletBottomRight"></span>
+    </dd>
+
+</dl>
