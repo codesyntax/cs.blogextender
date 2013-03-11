@@ -1,0 +1,50 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="cs.blogextender">
+
+  <browser:page
+      name="blogs_summary_view"
+      permission="zope2.View"
+      for="plone.app.collection.interfaces.ICollection"
+      template="templates/blogs_summary_view.pt"
+      />
+
+  <browser:menuItem
+      for="plone.app.collection.interfaces.ICollection"
+      menu="plone_displayviews"
+      title="View of the blog community"
+      action="blogs_summary_view"
+        />
+
+
+  <browser:page
+      for="Products.ATContentTypes.interfaces.IATNewsItem"
+      name="blog_item_summary_view"
+      class=".blog.DefaultItemView"
+      permission="zope2.View"
+  />
+
+  <browser:page
+      for="*"
+      name="blog_summary_view"
+      class="collective.blog.view.blog.BlogView"
+      template="templates/blog_summary_view.pt"
+      permission="zope2.View"
+  />
+
+  <browser:menuItem
+      for="*"
+      menu="plone_displayviews"
+      title="Blog summary view"
+      action="blog_summary_view"
+        />
+
+  <adapter
+      factory=".blog.BlogEntryGetter"
+      for="..interfaces.IBlog"
+      provides="collective.blog.view.interfaces.IBlogEntryRetriever"
+      />
+
+</configure>
