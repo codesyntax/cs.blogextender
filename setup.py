@@ -29,6 +29,7 @@ setup(name='cs.blogextender',
           'five.grok',
           'collective.blog.star',
           'collective.contentrules.mailadapter',
+          'collective.portlet.ngcollection',
       ],
       entry_points="""
       # -*- Entry points: -*-
