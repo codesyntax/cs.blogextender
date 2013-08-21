@@ -30,7 +30,7 @@
              Title
             </span>
         </a> <span class="portletItemDetails" tal:condition="view/data/show_dates"><span tal:replace="obj/Creator" />, <span tal:define="cobj python:obj.getObject()"
-                                                                                                                             tal:replace="cobj/creation_date">Date</span></span>
+                                                                                                                             tal:replace="cobj/commenttime">Date</span></span>
 
     </dd>
     </tal:events>
