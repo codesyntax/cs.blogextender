@@ -63,7 +63,7 @@
 
   <browser:page
       name="blog_checker"
-      for="Products.Archetypes.interfaces.IBaseFolder"
+      for="*"
       class=".blog.BlogChecker"
       permission="zope2.View"
       allowed_interface=".blog.IBlogChecker"
