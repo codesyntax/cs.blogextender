@@ -1,5 +1,5 @@
 <dl class="portlet portletBlogImagePortlet"
-    i18n:domain="eibarorg.theme"
+    i18n:domain="cs.blogextender"
     tal:condition="view/available"
     tal:define="blog view/parentblog">
 
@@ -26,21 +26,21 @@
             <li class="rss">
                 <a tal:condition="not:blog/feedburner_posts"
                     href="" tal:attributes="href string:${blog/absolute_url}/atom.xml">
-                    Blogaren RSS jarioa
+                    Blog's RSS feed
                 </a>
                 <a tal:condition="blog/feedburner_posts"
                     href="" tal:attributes="href blog/feedburner_posts">
-                    Blogaren RSS jarioa
+                    Blog's RSS feed
                 </a>
             </li>
             <li class="rss">
                 <a tal:condition="not:blog/feedburner_comments"
                     href="" tal:attributes="href string:${blog/absolute_url}/erantzunak/atom.xml">
-                    Erantzunen RSS jarioa
+                    Comments' RSS feed
                 </a>
                 <a tal:condition="blog/feedburner_comments"
                     href="" tal:attributes="href blog/feedburner_comments">
-                    Erantzunen RSS jarioa
+                    Comments' RSS feed
                 </a>
 
             </li>
