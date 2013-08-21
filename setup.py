@@ -30,6 +30,7 @@ setup(name='cs.blogextender',
           'collective.blog.star',
           'collective.contentrules.mailadapter',
           'collective.portlet.ngcollection',
+          'cs.commenteditor',
           'z3c.jbot'
       ],
       entry_points="""
