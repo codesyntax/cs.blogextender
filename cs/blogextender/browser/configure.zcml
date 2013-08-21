@@ -5,6 +5,12 @@
     i18n_domain="cs.blogextender">
 
 
+<include package="z3c.jbot" file="meta.zcml" />
+
+<browser:jbot
+    directory="template-overrides" />
+
+
   <plone:portletTemplates
     interface="collective.portlet.ngcollection.ngcollection.INGCollection"
     directory="portlet-templates"
