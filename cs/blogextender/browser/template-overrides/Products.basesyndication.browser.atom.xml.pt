@@ -104,16 +104,22 @@
         http://www.atomenabled.org/developers/syndication/#recommendedEntryElements
       </tal:comment>
       <tal:entrycontent define="has_body python:len(feedentry.getBody()) > 0">
-      <summary tal:condition="python: (not has_body) and feedentry.getDescription()"
+      <summary tal:condition="feedentry/getDescription"
                tal:content="feedentry/getDescription"/>
 
       <tal:block
           tal:condition="has_body"
-          tal:define="text feedentry/getXhtml|nothing">
+          tal:define="text feedentry/getXhtml|nothing;
+                      description feedentry/getDescription">
       <content type="xhtml" xml:base="" xml:lang="en-US" xml:space="preserve"
                tal:attributes="xml:base feed/getBaseURL"
                tal:condition="text">
         <div xmlns="http://www.w3.org/1999/xhtml">
+          <tal:desc condition="description">
+            <tal:block tal:replace="structure string:&lt;p&gt;"/>
+            <tal:block tal:replace="description" />
+            <tal:block tal:replace="structure string:&lt;/p&gt;"/>
+          </tal:desc>
           <tal:block tal:replace="structure text"/>
         </div>
       </content>
@@ -121,6 +127,11 @@
                tal:attributes="xml:base feed/getBaseURL"
                tal:condition="not:text">
           <tal:block tal:replace="structure string:&lt;![CDATA["/>
+          <tal:desc condition="description">
+            <tal:block tal:replace="structure string:&lt;p&gt;"/>
+            <tal:block tal:replace="description" />
+            <tal:block tal:replace="structure string:&lt;/p&gt;"/>
+          </tal:desc>
           <tal:block tal:replace="structure feedentry/getBody"/>
           <tal:block tal:replace="structure string:]]&gt;"/>
       </content>
