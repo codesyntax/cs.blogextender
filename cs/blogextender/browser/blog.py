@@ -156,7 +156,8 @@ class BlogActivationHandler(BrowserView):
                                         IPortletAssignmentMapping)
 
         biportlet = BIAssignment()
-        navportlet = NavAssignment()
+        purl = getToolByName(context, 'portal_url')
+        navportlet = NavAssignment(root='/'.join(purl.getRelativeContentPath(context)))
         archiveportlet = ArAssignment()
         ngcollection = NGAssignment(
             header=translate(_(u'Latest comments'),
