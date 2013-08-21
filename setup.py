@@ -30,6 +30,7 @@ setup(name='cs.blogextender',
           'collective.blog.star',
           'collective.contentrules.mailadapter',
           'collective.portlet.ngcollection',
+          'z3c.jbot'
       ],
       entry_points="""
       # -*- Entry points: -*-
