@@ -6,14 +6,9 @@
     <metal:main fill-slot="main">
       <tal:main-macro metal:define-macro="main">
 
-      <div tal:replace="structure provider:plone.abovecontenttitle" />
+      <span tal:replace="structure here/@@parentblogheader"></span>
 
-      <h1 class="documentFirstHeading" tal:condition="python:getattr(here,'widget', None)">
-        <metal:field use-macro="python:here.widget('title', mode='view')">
-          Title
-        </metal:field>
-        <span class="visualClear"><!-- --></span>
-      </h1>
+      <div tal:replace="structure provider:plone.abovecontenttitle" />
 
       <p class="documentDescription" tal:condition="python:getattr(here,'widget',None)">
         <metal:field use-macro="python:here.widget('description', mode='view')">
@@ -22,22 +17,13 @@
         <span class="visualClear"><!-- --></span>
       </p>
 
-
-      <metal:empty metal:define-slot="no_items_in_listing">
-        <p class="discreet"
-           tal:condition="not: here/objectIds"
-           i18n:translate="description_no_blog_entries">
-            There are no posts in this blog yet.
-        </p>
-      </metal:empty>
-
       <div tal:replace="structure provider:plone.abovecontentbody" />
 
-      <div class="sectionImageContainer" tal:condition="here/image_mini|nothing">
+      <div class="sectionImageContainer" tal:condition="here/image_preview|nothing">
         <a href="#"
           tal:attributes="href string:$here_url/image/image_view_fullscreen"
           id="parent-fieldname-image">
-          <img tal:replace="structure python: here.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+          <img tal:replace="structure python: here.tag(scale='preview', css_class='newsImage')" src="" alt="" />
         </a>
         <p class="discreet">
           <metal:field use-macro="python:here.widget('imageCaption', mode='view')">
@@ -50,7 +36,7 @@
 
       <div id="blog-listing"
            tal:define="batch view/batch">
-        <div metal:use-macro="here/batch_macros/macros/navigation" />
+
 
         <tal:contentitem repeat="item batch">
           <div class="blog-item"
@@ -58,8 +44,17 @@
             <tal:block replace="structure ob/blog_item_view" />
             <div class="comment-link"
               tal:condition="python:view.commentsEnabled(ob)">
-              <a i18n:translate="" tal:attributes="href python:view.item_url(item)">
-                <tal:block i18n:name="comments_count" replace="python:view.commentCount(ob)"/> Comments
+              <a tal:attributes="href python:view.item_url(item)"
+                 tal:define="count python:view.commentCount(ob)">
+                <tal:zero condition="python: count == 0">
+                    No replies
+                </tal:zero>
+                <tal:bat condition="python:count==1">
+                    1 reply
+                </tal:bat>
+                <tal:n condition="python:count > 1">
+                  <tal:block replace="count"/> replies
+                </tal:n>
               </a><p/>
             </div>
           </div>
