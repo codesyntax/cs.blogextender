@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object>
+<hidden manager="plone.belowcontent" skinname="*">
+  <viewlet name="plone.comments"/>
+</hidden>
+<order manager="plone.belowcontent" skinname="*">
+  <viewlet name="cs.blogextender.comments" insert_before="plone.comments"/>
+</order>
+</object>
