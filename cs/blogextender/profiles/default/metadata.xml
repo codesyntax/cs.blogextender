@@ -3,5 +3,6 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-collective.portlet.ngcollection:default</dependency>
+    <dependency>profile-collective.z3cform.norobots:default</dependency>
   </dependencies>
 </metadata>
