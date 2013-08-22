@@ -36,5 +36,3 @@ class CommentsViewlet(Base):
 
         if len(conversation.objectIds()) > 0:
             return replies_with_workflow_actions()
-
-        return []
