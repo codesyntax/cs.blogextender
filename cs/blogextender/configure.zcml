@@ -10,6 +10,7 @@
   <grok:grok package="." />
   <include package="plone.browserlayer" />
   <include package=".browser" />
+  <include file="interpolators.zcml" />
 
   <adapter factory=".extender.BlogExtender" />
   <adapter factory=".mailer.BlogCommentMailer" />

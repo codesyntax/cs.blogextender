@@ -1,0 +1,59 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="cs.blogextender">
+
+
+   <adapter
+      factory="plone.stringinterp.dollarReplace.Interpolator"
+      for="plone.app.discussion.interfaces.IComment"
+      provides="plone.stringinterp.interfaces.IStringInterpolator"
+      />
+
+   <adapter
+       for="plone.app.discussion.interfaces.IComment"
+       provides="plone.stringinterp.interfaces.IStringSubstitution"
+       factory=".commentinterpolator.UrlSubstitution"
+       name="absolute_url"
+       />
+
+   <adapter
+       for="plone.app.discussion.interfaces.IComment"
+       provides="plone.stringinterp.interfaces.IStringSubstitution"
+       factory=".commentinterpolator.TitleSubstitution"
+       name="title"
+       />
+
+    <adapter
+       for="plone.app.discussion.interfaces.IComment"
+       provides="plone.stringinterp.interfaces.IStringSubstitution"
+       factory=".commentinterpolator.CreatedSubstitution"
+       name="created"
+       />
+
+    <adapter
+       for="plone.app.discussion.interfaces.IComment"
+       provides="plone.stringinterp.interfaces.IStringSubstitution"
+       factory=".commentinterpolator.ModifiedSubstitution"
+       name="modified"
+       />
+
+    <adapter
+       for="plone.app.discussion.interfaces.IComment"
+       provides="plone.stringinterp.interfaces.IStringSubstitution"
+       factory=".commentinterpolator.CreatorSubstitution"
+       name="Creator"
+       />
+
+    <adapter
+       for="plone.app.discussion.interfaces.IComment"
+       provides="plone.stringinterp.interfaces.IStringSubstitution"
+       factory=".commentinterpolator.TextSubstitution"
+       name="text"
+       />
+
+
+
+
+</configure>
