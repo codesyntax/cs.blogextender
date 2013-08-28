@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<contentrules>
+ <rule name="rule-1" title="Notify by e-mail" description="" enabled="False"
+    event="zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    stop-after="False">
+  <conditions>
+   <condition type="plone.conditions.PortalType">
+    <property name="check_types">
+     <element>Discussion Item</element>
+    </property>
+   </condition>
+  </conditions>
+  <actions>
+   <action type="collective.actions.Mail">
+    <property name="source"></property>
+    <property name="message">New comment in your blog:
+
+     Author: ${Creator}
+     URL: ${absolute_url}
+     Date: ${created}
+     Text:
+
+     ${text}
+
+     Note: This notification is automatic, do not reply!!</property>
+    <property name="subject">New comment</property>
+   </action>
+  </actions>
+ </rule>
+</contentrules>
