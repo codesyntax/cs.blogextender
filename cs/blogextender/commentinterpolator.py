@@ -1,6 +1,6 @@
 from zope.component import adapts
 from plone.app.discussion.interfaces import IComment
-from eibarorg.theme import themeMessageFactory as _
+from cs.blogextender import extenderMessageFactory as _
 from zope.interface import implements
 from plone.stringinterp.adapters import BaseSubstitution as Base
 from plone.stringinterp.adapters import UrlSubstitution as BaseUrlSubstitution
