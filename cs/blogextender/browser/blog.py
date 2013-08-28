@@ -19,7 +19,8 @@ from collective.blog.view.default_item import DefaultItemView as Base
 from zope.i18n import translate
 from cs.blogextender import extenderMessageFactory as _
 from cs.blogextender.interfaces import IBlog
-
+from zope.event import notify
+from ..events import BlogEnabled, BlogDisabled
 from ..blogimageportlet import Assignment as BIAssignment
 from plone.app.portlets.portlets.navigation import Assignment as NavAssignment
 from collective.blog.portlets.archive import Assignment as ArAssignment
@@ -58,11 +59,13 @@ class BlogActivationHandler(BrowserView):
             adapted.update(add=[IBlog], remove=[])
             self.prepare_blog()
             message = _('Blog enabled correctly')
+            notify(BlogEnabled(context))
             IStatusMessage(self.request).add(message)
         else:
+            adapted.update(add=[], remove=[IBlog])
+            notify(BlogDisabled(context))
             message = _('Blog disabled correctly')
             IStatusMessage(self.request).add(message)
-            adapted.update(add=[], remove=[IBlog])
 
         return self.request.response.redirect(context.absolute_url())
 
