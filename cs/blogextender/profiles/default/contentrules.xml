@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <contentrules>
- <rule name="rule-1" title="Notify by e-mail" description="" enabled="False"
+ <rule name="cs-blogextender-notify-by-email" title="Notify by e-mail (cs.blogextender)" description="" enabled="False"
     event="zope.lifecycleevent.interfaces.IObjectAddedEvent"
     stop-after="False">
   <conditions>
