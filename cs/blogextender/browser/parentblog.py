@@ -1,10 +1,9 @@
+from ..interfaces import IBlog
+from Acquisition import aq_inner, aq_parent
 from five import grok
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from zope.interface import Interface
 
-from Acquisition import aq_inner, aq_parent
-
-from ..interfaces import IBlog
-from Products.CMFPlone.interfaces import IPloneSiteRoot
 
 grok.templatedir('templates')
 
