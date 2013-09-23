@@ -25,20 +25,24 @@
         <ul>
             <li class="rss">
                 <a tal:condition="not:blog/feedburner_posts"
+                    i18n:translate=""
                     href="" tal:attributes="href string:${blog/absolute_url}/atom.xml">
                     Blog's RSS feed
                 </a>
                 <a tal:condition="blog/feedburner_posts"
+                    i18n:translate=""
                     href="" tal:attributes="href blog/feedburner_posts">
                     Blog's RSS feed
                 </a>
             </li>
             <li class="rss">
                 <a tal:condition="not:blog/feedburner_comments"
+                    i18n:translate=""
                     href="" tal:attributes="href string:${blog/absolute_url}/erantzunak/atom.xml">
                     Comments' RSS feed
                 </a>
                 <a tal:condition="blog/feedburner_comments"
+                    i18n:translate=""
                     href="" tal:attributes="href blog/feedburner_comments">
                     Comments' RSS feed
                 </a>

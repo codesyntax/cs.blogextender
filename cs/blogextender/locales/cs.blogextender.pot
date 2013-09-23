@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-09-16 09:56+0000\n"
+"POT-Creation-Date: 2013-09-23 08:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,14 @@ msgstr ""
 
 #: ./browser/blog.py:61
 msgid "Blog enabled correctly"
+msgstr ""
+
+#: ./blogimageportlet.pt:27
+msgid "Blog's RSS feed"
+msgstr ""
+
+#: ./blogimageportlet.pt:39
+msgid "Comments' RSS feed"
 msgstr ""
 
 #: ./commentinterpolator.py:35

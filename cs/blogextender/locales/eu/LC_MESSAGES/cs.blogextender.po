@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cs.blogextender\n"
-"POT-Creation-Date: 2013-09-16 09:56+0000\n"
-"PO-Revision-Date: 2013-09-16 12:08+0100\n"
+"POT-Creation-Date: 2013-09-23 08:22+0000\n"
+"PO-Revision-Date: 2013-09-23 10:22+0100\n"
 "Last-Translator: Mikel Larreategi <mlarreategi@codesyntax.com>\n"
 "Language-Team: LANGUAGE <eu@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,14 @@ msgstr "Bloga ondo desaktibatu da"
 #: ./browser/blog.py:61
 msgid "Blog enabled correctly"
 msgstr "Bloga ondo aktibatu da"
+
+#: ./blogimageportlet.pt:27
+msgid "Blog's RSS feed"
+msgstr "Blogaren RSS jarioa"
+
+#: ./blogimageportlet.pt:39
+msgid "Comments' RSS feed"
+msgstr "Erantzunen RSS jarioa"
 
 #: ./commentinterpolator.py:35
 msgid "Created"
