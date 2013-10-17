@@ -1,16 +1,11 @@
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
-from five import grok
-
-from plone.app.discussion.interfaces import IComment
+from Products.Five.browser import BrowserView
 
 
-class CommentTime(grok.View):
-    grok.context(IComment)
-    grok.require('zope2.View')
-    grok.name('commenttime')
+class CommentTime(BrowserView):
 
-    def render(self):
+    def __call__(self):
         created = self.request.get('created', False)
         util = getToolByName(self.context, 'translation_service')
         if created:

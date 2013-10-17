@@ -25,6 +25,13 @@
       layer="cs.blogextender.interfaces.ICSBlogExtenderLayer"
       />
 
+  <browser:page
+      name="commenttime"
+      permission="zope2.View"
+      class=".commenttime.CommentTime"
+      for="plone.app.discussion.interfaces.IComment"
+      layer="cs.blogextender.interfaces.ICSBlogExtenderLayer"
+      />
 
   <browser:page
       name="parentblog"
