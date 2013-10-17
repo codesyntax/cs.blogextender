@@ -1,17 +1,10 @@
 from ..interfaces import IBlog
 from Acquisition import aq_inner, aq_parent
-from five import grok
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from zope.interface import Interface
+from Products.Five.browser import BrowserView
 
 
-grok.templatedir('templates')
-
-
-class ParentBlog(grok.View):
-    grok.context(Interface)
-    grok.require('zope2.View')
-    grok.name('parentblog')
+class ParentBlog(BrowserView):
 
     def returnblog(self):
         context = aq_inner(self.context)
@@ -28,10 +21,7 @@ class ParentBlog(grok.View):
         return None
 
 
-class ParentBlogHeader(grok.View):
-    grok.context(Interface)
-    grok.require('zope2.View')
-    grok.name('parentblogheader')
+class ParentBlogHeader(BrowserView):
 
     def returnblog(self):
         context = aq_inner(self.context)

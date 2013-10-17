@@ -25,6 +25,26 @@
       layer="cs.blogextender.interfaces.ICSBlogExtenderLayer"
       />
 
+
+  <browser:page
+      name="parentblog"
+      permission="zope2.View"
+      class=".parentblog.ParentBlog"
+      for="*"
+      template="templates/parentblog.pt"
+      layer="cs.blogextender.interfaces.ICSBlogExtenderLayer"
+      />
+
+  <browser:page
+      name="parentblogheader"
+      permission="zope2.View"
+      class=".parentblog.ParentBlogHeader"
+      for="*"
+      template="templates/parentblogheader.pt"
+      layer="cs.blogextender.interfaces.ICSBlogExtenderLayer"
+      />
+
+
   <browser:menuItem
       for="plone.app.collection.interfaces.ICollection"
       menu="plone_displayviews"
