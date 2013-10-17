@@ -26,7 +26,6 @@ setup(name='cs.blogextender',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'five.grok',
           'collective.blog.star',
           'collective.contentrules.mailadapter',
           'collective.portlet.ngcollection',
