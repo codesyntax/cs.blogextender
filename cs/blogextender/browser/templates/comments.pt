@@ -51,14 +51,14 @@
                     <tal:name>
                         <a href=""
                            tal:condition="reply/url|nothing"
-                           tal:content="reply/Creator|reply/author_name"
+                           tal:content="reply/author_name|reply/Creator"
                            rel="nofollow"
                            tal:attributes="href reply/url">
                             Poster Name
                         </a>
-                        <span tal:condition="not: reply/url|nothing"
-                              tal:replace="reply/Creator|reply/author_name" />
-                        <span tal:condition="not: reply/Creator|reply/author_name">Anonymous</span>
+                        <span tal:condition="not:reply/url|nothing"
+                              tal:replace="reply/author_name|reply/Creator" />
+                        <span tal:condition="not:reply/author_name|reply/Creator">Anonymous</span>
                     </tal:name>
                     <div class="commentDate"
                          tal:content="python:view.format_time(reply.modification_date)">
